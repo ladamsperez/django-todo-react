@@ -22,7 +22,7 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/todos/")
+      .get("/api/todos/")
       .then(res => this.setState({ todoList: res.data }))
       .catch(err => console.log(err));
   };
@@ -103,7 +103,7 @@ class App extends Component {
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/todos/${item.id}`)
+      .delete(`http://localhost:8000/api/todos/${item.id}/`)
       .then(res => this.refreshList());
   };
   createItem = () => {
